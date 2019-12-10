@@ -8,17 +8,13 @@ class ResultsScene extends Phaser.Scene {
             fill: colors.headline,
             font: 'bold 60px Montserrat'
         }).setOrigin(0.5, 0.5);
-		console.log(response);
 		this.input.on('pointerdown', () => {
-			// this.scene.stop('ResultsScene')
-			// this.scene.start('GameScene')
 		})
 
 		var height = 100;
 		var width = w/8;
 		for(var i = 0; i < answers.length; i++) {
 			if(i == Math.floor(answers.length / 2)) {
-				console.log('hi');
 				height = 100;
 				width = 3*w/5 + 50;
 			}
