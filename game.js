@@ -24,7 +24,7 @@ const config = {
 	width: w,
     height: h,
 	backgroundColor: colors.background,
-	scene: [StartScene, GameScene, EndScene]
+	scene: [StartScene, GameScene, ResultsScene]
 };
 
 const game = new Phaser.Game(config);

@@ -1,8 +1,8 @@
 const answers = [
 	{word: "mother", key: "F"},
 	{word: "father", key: "M"},
-	{word: "actor", key: "M"},
 	{word: "actress", key: "F"},
+	{word: "actor", key: "M"},
 	{word: "male doctor", key: "M"},
 	{word: "female doctor", key: "M"},
 	{word: "fear", key: "F"},

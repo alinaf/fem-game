@@ -68,7 +68,7 @@ function choose(choice) {
 	counter++;
     if (counter == answers.length) {
     	context.scene.stop('GameScene')
-		context.scene.start('EndScene')
+		context.scene.start('ResultsScene')
     }
     else {
     	word.setText(answers[counter].word);
