@@ -28,7 +28,7 @@ class GameScene extends Phaser.Scene {
         fem.setOrigin(0.5);
         fem.setInteractive();
         fem.on('pointerup', function(pointer) {
-            choose('f');
+            choose('F');
         });
         fem.tint = colors.button;
         this.add.text(fem.x, fem.y, "fem", {
@@ -40,7 +40,7 @@ class GameScene extends Phaser.Scene {
         masc.setOrigin(0.5);
         masc.setInteractive();
         masc.on('pointerup', function(pointer) {
-            choose('m');
+            choose('M');
         });
         masc.tint = colors.button;
         this.add.text(masc.x, masc.y, "masc", {
@@ -52,7 +52,7 @@ class GameScene extends Phaser.Scene {
         neutral.setOrigin(0.5);
         neutral.setInteractive();
         neutral.on('pointerup', function(pointer) {
-            choose('n');
+            choose('N');
         });
         neutral.tint = colors.button;
         this.add.text(neutral.x, neutral.y, "neutral", {
@@ -64,11 +64,13 @@ class GameScene extends Phaser.Scene {
 }
 
 function choose(choice) {
-    word.setText(answers[counter].word);
-    console.log(choice, counter);
-    counter++;
+	response.push(choice);
+	counter++;
     if (counter == answers.length) {
     	context.scene.stop('GameScene')
 		context.scene.start('EndScene')
+    }
+    else {
+    	word.setText(answers[counter].word);
     }
 }

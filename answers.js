@@ -14,4 +14,4 @@ const answers = [
 	{word: "night", key: "F"},
 ]
 
-const response = new Map();
+const response = [];
