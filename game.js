@@ -1,21 +1,30 @@
+// colors
+const colors = {
+	background: "#e3f6f5",
+	headline: "#272343",
+	button: 0xffd803, // idk why it doesn't take #
+};
+
+// fonts
+WebFontConfig = {
+    google: {
+        families: ["Montserrat", "Domine", "Merriweather"]
+    }
+};
+
 const gameState = {
 	score: 0
 };
 
+const w = window.innerWidth - 20;
+const h = window.innerHeight - 20;
+
 const config = {
-	type: Phaser.AUTO,
-	width: 450,
-	height: 500,
-	backgroundColor: "b9eaff",
-	physics: {
-		default: 'arcade',
-		arcade: {
-			gravity: { y: 200 },
-			enableBody: true,
-		}
-	},
-	scene: [StartScene, GameScene]
+    type: Phaser.AUTO,
+	width: w,
+    height: h,
+	backgroundColor: colors.background,
+	scene: [StartScene, GameScene, EndScene]
 };
 
 const game = new Phaser.Game(config);
-
