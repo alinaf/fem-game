@@ -1,9 +1,12 @@
+var context;
 class ResultsScene extends Phaser.Scene {
 	constructor() {
 		super({ key: 'ResultsScene' })
 	}
 
 	create() {
+		var slideMap = new Map();
+		context = this;
 		this.add.text(w / 2, 60, "Your Results", {
             fill: colors.headline,
             font: 'bold 60px Montserrat'
@@ -14,7 +17,7 @@ class ResultsScene extends Phaser.Scene {
 		var height = 100;
 		var width = w/8;
 		for(var i = 0; i < answers.length; i++) {
-			if(i == Math.floor(answers.length / 2)) {
+			if(i == Math.ceil(answers.length / 2)) {
 				height = 100;
 				width = 3*w/5 + 50;
 			}
@@ -33,10 +36,17 @@ class ResultsScene extends Phaser.Scene {
             	font: 'bold 40px Montserrat'
        			});
 			}
-			this.add.text(width, height, answers[i].word + " " + response[i] + extra, {
+			const reveal = this.add.text(width, height, answers[i].word + " " + response[i] + extra, {
             	fill: colors.headline,
             	font: 'bold 35px Montserrat'
        		});
+			reveal.setInteractive();
+			slideMap.set(reveal, answers[i].slide)
+        	reveal.on('pointerup', function(pointer) {
+            	context.scene.stop('ResultsScene');
+				context.scene.start(slideMap.get(this));
+        	});
+
 		}
 	}
 }
