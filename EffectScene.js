@@ -7,8 +7,6 @@ class EffectScene extends Phaser.Scene {
 		console.log('effect scene');
 		this.add.text( w/2, h/2, 'le genre ou le sexe', {fill: colors.headline, font: '80px Montserrat'}).setOrigin(0.5, 0.5);
 		this.input.on('pointerdown', () => {
-			// this.scene.stop('StartScene')
-			// this.scene.start('GameScene')
 		})
 	}
 }

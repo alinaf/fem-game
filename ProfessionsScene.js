@@ -4,11 +4,21 @@ class ProfessionsScene extends Phaser.Scene {
 	}
 
 	create() {
-		console.log('proffesionss scnene');
 		this.add.text( w/2, h/2, 'professions', {fill: colors.headline}).setOrigin(0.5, 0.5);
 		this.input.on('pointerdown', () => {
-			this.scene.stop('ProfessionsScene')
-			this.scene.start('GameScene')
 		})
+
+		const back = this.add.text(50, h - 100, "↩️", {
+            fill: colors.headline,
+            font: '70px Montserrat'
+        });
+        
+        back.setInteractive();
+        back.on('pointerdown', () => {
+        	context.scene.stop('ProfessionsScene');
+			context.scene.start('ResultsScene');
+		})
+
+
 	}
 }
