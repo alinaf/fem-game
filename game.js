@@ -2,7 +2,9 @@
 const colors = {
 	background: "#e3f6f5",
 	headline: "#272343",
+	headlineNum: 0x272343,
 	button: 0xffd803, // idk why it doesn't take #
+	white: "#fffffe",
 };
 
 // fonts
@@ -24,7 +26,8 @@ const config = {
 	width: w,
     height: h,
 	backgroundColor: colors.background,
-	scene: [StartScene, GameScene, ResultsScene, EffectScene, ProfessionsScene, DominatingScene, GenderScene],
+	scene: [GenderScene],
+	// scene: [StartScene, GameScene, ResultsScene, EffectScene, ProfessionsScene, DominatingScene, GenderScene],
 };
 
 const game = new Phaser.Game(config);
