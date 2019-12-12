@@ -20,7 +20,7 @@ class ExperimentScene extends Phaser.Scene {
 		this.make.text({
         x: w/2,
         y: h/2 + 150,
-        text: "A 1958 study revealed that children who spoke Navajo sorted the objects 'yellow stick, blue cylinder, and blue stick' by shape, rather than by color, while English speaking children sorted them by shape.",
+        text: "A 1958 study revealed that children who spoke Navajo sorted the objects 'yellow stick, blue cylinder, and blue stick' by shape, rather than by color, while English speaking children sorted them by color.",
         origin: { x: 0.5, y: 0.5 },
         style: {
             font: '35px Montserrat',
