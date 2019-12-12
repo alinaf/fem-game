@@ -1,4 +1,4 @@
-var counter = 0;
+var counter;
 var word;
 var context;
 
@@ -15,6 +15,7 @@ class GameScene extends Phaser.Scene {
     }
 
     create() {
+        counter = 0;
         context = this;
         this.cameras.main.backgroundColor.setTo(255, 255, 254);
 

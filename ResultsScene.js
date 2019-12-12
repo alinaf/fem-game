@@ -47,6 +47,17 @@ class ResultsScene extends Phaser.Scene {
 				context.scene.start(slideMap.get(this));
         	});
 
+        		const back = this.add.text(w/2, h - 50, "Restart", {
+            fill: colors.headline,
+            font: '40px Montserrat'
+        }).setOrigin(0.5, 0.5);
+        
+        back.setInteractive();
+        back.on('pointerdown', () => {
+        	this.scene.stop('ResultsScene');
+			this.scene.start('StartScene');
+		})
+
 		}
 	}
 }
