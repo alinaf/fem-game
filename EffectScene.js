@@ -4,8 +4,25 @@ class EffectScene extends Phaser.Scene {
 	}
 
 	create() {
-		console.log('effect scene');
-		this.add.text( w/2, h/2, 'effect scene', {fill: colors.headline, font: '80px Montserrat'}).setOrigin(0.5, 0.5);
+		this.add.text( w/2, h/10, 'Does it matter?', {fill: colors.headline, font: '80px Montserrat'}).setOrigin(0.5, 0.5);
+		
+		const button = this.make.text({
+        x: w/2,
+        y: h/2 + 30,
+        text: 'Saphir-Whorf Hypothesis: \n\n"People experience the world in distinct ways because of differences present in their languages, which act as filters on the world, highlighting and obscuring different physical phenomena like a special lens fitted to a camera."\n\n - Professor Andrew Simpson',
+        origin: { x: 0.5, y: 0.5 },
+        style: {
+            font: '45px Montserrat',
+            fill: 'black',
+            wordWrap: { width: 3*w/4 }
+        }
+    });
+        button.setInteractive();
+        button.on('pointerdown', () => {
+            this.scene.stop('EffectScene');
+            this.scene.start('ExperimentScene');
+        });
+
 		const back = this.add.text(50, h - 100, "↩️", {
             fill: colors.headline,
             font: '70px Montserrat'
@@ -13,8 +30,8 @@ class EffectScene extends Phaser.Scene {
         
         back.setInteractive();
         back.on('pointerdown', () => {
-        	context.scene.stop('EffectScene');
-			context.scene.start('ResultsScene');
+        	this.scene.stop('EffectScene');
+			this.scene.start('ResultsScene');
 		})
 	}
 }

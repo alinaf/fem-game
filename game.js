@@ -26,8 +26,14 @@ const config = {
 	width: w,
     height: h,
 	backgroundColor: colors.background,
-	scene: [ProfessionsScene],
-	//scene: [StartScene, GameScene, ResultsScene, EffectScene, ProfessionsScene, DominatingScene, GenderScene],
+	    physics: {
+        default: 'arcade',
+        arcade: {
+          gravity: { y: 300 },
+          enableBody: true,
+        }
+      },
+	scene: [StartScene, GameScene, ResultsScene, EffectScene, ProfessionsScene, DominatingScene, GenderScene, ExperimentScene],
 };
 
 const game = new Phaser.Game(config);
