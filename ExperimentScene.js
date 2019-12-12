@@ -43,7 +43,6 @@ class ExperimentScene extends Phaser.Scene {
         loop: true,
       });
 
-
 		const back = this.add.text(50, h - 100, "↩️", {
             fill: colors.headline,
             font: '70px Montserrat'
