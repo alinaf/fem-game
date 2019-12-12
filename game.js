@@ -26,8 +26,8 @@ const config = {
 	width: w,
     height: h,
 	backgroundColor: colors.background,
-	scene: [GenderScene],
-	// scene: [StartScene, GameScene, ResultsScene, EffectScene, ProfessionsScene, DominatingScene, GenderScene],
+	scene: [ProfessionsScene],
+	//scene: [StartScene, GameScene, ResultsScene, EffectScene, ProfessionsScene, DominatingScene, GenderScene],
 };
 
 const game = new Phaser.Game(config);

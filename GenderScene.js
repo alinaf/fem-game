@@ -90,8 +90,8 @@ class GenderScene extends Phaser.Scene {
 
 	back.setInteractive();
 	back.on('pointerdown', () => {
-		context.scene.stop('GenderScene');
-		context.scene.start('ResultsScene');
+		this.scene.stop('GenderScene');
+		this.scene.start('ResultsScene');
 	})
 }
 }
